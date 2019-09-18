@@ -172,15 +172,16 @@ describe('cast into string', () => {
   it('numbers', () => {
     expect(validator.castNumber(number)).toBe(42);
     expect(validator.castNumber(strNumber)).toBe(42);
+    // expect(validator.castNumber(str)).toBe(42);
     expect(() => {
-      validator.castString(obj);
+      validator.castNumber(obj);
     }).toThrow(validator.CannotCoerceError);
     expect(() => {
-      validator.castString(array);
+      validator.castNumber(array);
     }).toThrow(validator.CannotCoerceError);
-    // expect(() => {
-    //   validator.castString(str);
-    // }).toThrow(validator.CannotCoerceError);
+    expect(() => {
+      validator.castNumber(str);
+    }).toThrow(validator.CannotCoerceError);
   });
 
 });
