@@ -146,3 +146,41 @@ describe('validator module', () => {
 
   });
 });
+
+describe('cast into string', () => {
+  const str = 'hello';
+  const strNumber = '42';
+  const number = 42;
+  const bool = true;
+  const date = new Date();
+  const obj = {};
+  const array = [];
+
+  it('strings', () => {
+    expect(validator.castString(str)).toBe('hello');
+    expect(validator.castString(number)).toBe('42');
+    expect(validator.castString(bool)).toBe('true');
+    expect(validator.castString(date)).toBe(String(new Date()));
+    expect(() => {
+      validator.castString(obj);
+    }).toThrow(validator.CannotCoerceError);
+    expect(() => {
+      validator.castString(array);
+    }).toThrow(validator.CannotCoerceError);
+  });
+
+  it('numbers', () => {
+    expect(validator.castNumber(number)).toBe(42);
+    expect(validator.castNumber(strNumber)).toBe(42);
+    expect(() => {
+      validator.castString(obj);
+    }).toThrow(validator.CannotCoerceError);
+    expect(() => {
+      validator.castString(array);
+    }).toThrow(validator.CannotCoerceError);
+    expect(() => {
+      validator.castString(str);
+    }).toThrow(validator.CannotCoerceError);
+  });
+
+});
