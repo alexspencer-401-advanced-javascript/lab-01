@@ -5,8 +5,8 @@
 ### Author: Alex Spencer
 
 ### Links and Resources
-* [submission PR]()
-* [travis]()
+* [submission PR](https://github.com/alexspencer-401-advanced-javascript/lab-01/pull/2)
+* [travis](https://travis-ci.com/alexspencer-401-advanced-javascript/lab-01/jobs/237000394)
 
 #### Documentation
 * [jsdoc]()
