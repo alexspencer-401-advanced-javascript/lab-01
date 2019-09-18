@@ -1,4 +1,5 @@
 const validator = require('../lib/validator.js');
+const error = require('../lib/Errors');
 
 describe('validator module', () => {
   
@@ -168,10 +169,10 @@ describe('cast into string', () => {
     expect(validator.castString(date)).toBe(String(new Date()));
     expect(() => {
       validator.castString(obj);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castString(array);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
   });
 
   it('numbers', () => {
@@ -179,16 +180,16 @@ describe('cast into string', () => {
     expect(validator.castNumber(strNumber)).toBe(42);
     expect(() => {
       validator.castNumber(obj);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castNumber(array);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castNumber(str);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castNumber(boolTrue);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     
   });
 
@@ -201,35 +202,35 @@ describe('cast into string', () => {
     expect(validator.castBoolean(stringFalse)).toBe(false);
     expect(() => {
       validator.castBoolean(obj);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castBoolean(str);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castBoolean(array);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castBoolean(date);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
   });
 
   it('date', () => {
     expect(validator.castDate(date)).toBe(String(new Date()));
     expect(() => {
       validator.castDate(obj);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castDate(str);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castDate(number);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castDate(boolFalse);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
     expect(() => {
       validator.castDate(boolTrue);
-    }).toThrow(validator.CannotCoerceError);
+    }).toThrow(error.CannotCoerceError);
 
   });
 });
