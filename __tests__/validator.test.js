@@ -233,4 +233,21 @@ describe('cast into string', () => {
     }).toThrow(error.CannotCoerceError);
 
   });
+
+});
+
+describe('get caster for', () => {
+
+  it('number', () => {
+    expect(validator.getCaster('number')).toBe(validator.castNumber);
+  });
+  it('boolean', () => {
+    expect(validator.getCaster('boolean')).toBe(validator.castBoolean);
+  });
+  it('date', () => {
+    expect(validator.getCaster('date')).toBe(validator.castDate);
+  });
+  it('string', () => {
+    expect(validator.getCaster('string')).toBe(validator.castString);
+  });
 });
