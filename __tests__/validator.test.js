@@ -166,7 +166,7 @@ describe('cast into string', () => {
     expect(validator.castString(str)).toBe('hello');
     expect(validator.castString(number)).toBe('42');
     expect(validator.castString(boolTrue)).toBe('true');
-    // expect(validator.castString(date)).toBe(String(new Date()));
+    expect(validator.castString(date)).toBe(String(new Date()));
     expect(() => {
       validator.castString(obj);
     }).toThrow(error.CannotCoerceError);
@@ -215,7 +215,7 @@ describe('cast into string', () => {
   });
 
   it('date', () => {
-    expect(validator.castDate(date)).toBe(String(new Date()));
+    // expect(validator.castDate(date)).toBe(String(new Date()));
     expect(() => {
       validator.castDate(obj);
     }).toThrow(error.CannotCoerceError);
