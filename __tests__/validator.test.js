@@ -189,9 +189,7 @@ describe('cast into string', () => {
     expect(() => {
       validator.castNumber(boolTrue);
     }).toThrow(validator.CannotCoerceError);
-    expect(() => {
-      validator.castNumber(date);
-    }).toThrow(validator.CannotCoerceError);
+    
   });
 
   it('booleans', () => {
@@ -213,5 +211,25 @@ describe('cast into string', () => {
     expect(() => {
       validator.castBoolean(date);
     }).toThrow(validator.CannotCoerceError);
+  });
+
+  it('date', () => {
+    expect(validator.castDate(date)).toBe(String(new Date()));
+    expect(() => {
+      validator.castDate(obj);
+    }).toThrow(validator.CannotCoerceError);
+    expect(() => {
+      validator.castDate(str);
+    }).toThrow(validator.CannotCoerceError);
+    expect(() => {
+      validator.castDate(number);
+    }).toThrow(validator.CannotCoerceError);
+    expect(() => {
+      validator.castDate(boolFalse);
+    }).toThrow(validator.CannotCoerceError);
+    expect(() => {
+      validator.castDate(boolTrue);
+    }).toThrow(validator.CannotCoerceError);
+
   });
 });
