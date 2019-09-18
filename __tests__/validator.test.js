@@ -182,6 +182,9 @@ describe('cast into string', () => {
     expect(() => {
       validator.castNumber(str);
     }).toThrow(validator.CannotCoerceError);
+    expect(() => {
+      validator.castNumber(bool);
+    }).toThrow(validator.CannotCoerceError);
   });
 
 });
