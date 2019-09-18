@@ -9,7 +9,7 @@
 * [travis](https://travis-ci.com/alexspencer-401-advanced-javascript/lab-01/jobs/237000394)
 
 #### Documentation
-* [jsdoc]()
+* [jsdoc](https://alexspencer-401-advanced-javascript.github.io/lab-01/)
 
 ### Setup
 
