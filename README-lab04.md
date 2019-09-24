@@ -1,15 +1,15 @@
-# Lab 02
+# LAB 04
 
-## Classes, Errors, Type Coercion
+## Model and Database
 
 ### Author: Alex Spencer
 
 ### Links and Resources
-* [submission PR](https://github.com/alexspencer-401-advanced-javascript/lab-01/pull/2)
-* [travis](https://travis-ci.com/alexspencer-401-advanced-javascript/lab-01/jobs/237000394)
+* [submission PR](https://github.com/alexspencer-401-advanced-javascript/lab-01/pull/5)
+* [travis](https://github.com/alexspencer-401-advanced-javascript/lab-01/pull/5/checks?check_run_id=234583310)
 
 #### Documentation
-* [jsdoc](https://alexspencer-401-advanced-javascript.github.io/lab-01/)
+* [jsdoc](docs/config/jsdoc.config.json)
 
 ### Setup
 
@@ -23,3 +23,4 @@
 #### Tests
 - Lint Tests: `npm run lint`
 - Jest Tets: `npm test`
+
