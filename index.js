@@ -25,7 +25,7 @@ modelExample.create(modelOne)
     modelExample.findById(response.id)
       .then((model) => {
         console.log(model);
-      }); //console log or return?
+      }); 
   });
 
 modelExample.create(modelTwo)
