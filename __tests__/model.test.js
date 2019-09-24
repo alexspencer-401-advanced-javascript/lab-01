@@ -8,7 +8,7 @@ jest.mock('../lib/database', () => {
 jest.mock('../lib/document-collection');
 
 const Model = require('../lib/model');
-const Schema = require('../lib/schema');
+const Schema = require('../lib/Schema');
 const { getCollection } = require('../lib/database');
 const DocumentCollection = require('../lib/document-collection');
 
@@ -33,12 +33,10 @@ describe('Model', () => {
   it('creates a schema and document collection', () => {
 
     // assert:
-    
     // Cats.schema should be an instance of Schema, 
     expect(Cats.schema).toBeInstanceOf(Schema);
     // with schemaConfig as saved schema
     expect(Cats.schema.schema).toBe(schemaConfig);
-
     // Cats.collectionPromise should be Promise that resolves
     // to an instance of DocumentCollection
     // (with collection.folder ending in "cats")
@@ -53,13 +51,11 @@ describe('Model', () => {
     
   });
 
-  it('creates a model', () => {
+  it.skip('creates a model', () => {
     const pojo = {
       name: 'test'
     };
-
     mockCollection.save.mockResolvedValue(pojo);
-    
     return Cats.create(pojo)
       .then(created => {
         expect(created).toEqual(pojo);
