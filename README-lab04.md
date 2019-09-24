@@ -5,8 +5,8 @@
 ### Author: Alex Spencer
 
 ### Links and Resources
-* [submission PR]()
-* [travis]()
+* [submission PR](https://github.com/alexspencer-401-advanced-javascript/lab-01/pull/5)
+* [travis](https://github.com/alexspencer-401-advanced-javascript/lab-01/pull/5/checks?check_run_id=234583310)
 
 #### Documentation
 * [jsdoc](docs/config/jsdoc.config.json)
